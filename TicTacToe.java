@@ -63,9 +63,15 @@ class Board{
         Scanner scanner = new Scanner(System.in);
         while (!(endGame()) && movesMade != 9){
             System.out.println("Pick a row");
-            int rowNum = scanner.nextInt();
+            int rowNum = -1;
+            if (scanner.hasNextInt()){
+                rowNum = scanner.nextInt();
+            }
             System.out.println("Pick a column");
-            int colNum = scanner.nextInt();
+            int colNum = -1;
+            if (scanner.hasNextInt()){
+                colNum = scanner.nextInt();
+            }
             System.out.println("X or O?");
             String move = scanner.next();
             move(rowNum,colNum,move.charAt(0));
