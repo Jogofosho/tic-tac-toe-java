@@ -57,7 +57,7 @@ class Board{
                 board[i][j] = '-';
             }
         }
-    }
+    }//newGame
     
     public void playGame(){
         Scanner scanner = new Scanner(System.in);
@@ -76,7 +76,7 @@ class Board{
         } else {
             System.out.println("Nobody won this round!");
         }
-    }
+    }//playGame
     
     public void move(int row, int col, char player){
         // since counting starts at 0, decrement player's entries
