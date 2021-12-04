@@ -62,12 +62,12 @@ class Board{
     public void playGame(){
         Scanner scanner = new Scanner(System.in);
         while (!(endGame()) && movesMade != 9){
-            System.out.println("Pick a row");
+            System.out.println("Pick a row (1, 2, or 3)");
             int rowNum = -1;
             if (scanner.hasNextInt()){
                 rowNum = scanner.nextInt();
             }
-            System.out.println("Pick a column");
+            System.out.println("Pick a column (1, 2, or 3)");
             int colNum = -1;
             if (scanner.hasNextInt()){
                 colNum = scanner.nextInt();
@@ -89,6 +89,12 @@ class Board{
         row--;
         col--;
         
+        if (player == 'x'){
+            player = 'X';
+        } else if (player == 'o'){
+            player = 'O';
+        }
+        
         if (!endGame()){
             if (movesMade != 9){
                 if ((row < 3 && row > -1) && (col < 3 && col > -1)) {
@@ -96,7 +102,6 @@ class Board{
                         if (board[row][col] != 'X' && board[row][col] != 'O'){
                             board[row][col] = player;
                             movesMade++;
-                            
                         } else {
                             System.out.println("Box already filled!");
                         }
