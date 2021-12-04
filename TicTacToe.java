@@ -61,6 +61,8 @@ class Board{
     
     public void playGame(){
         Scanner scanner = new Scanner(System.in);
+        System.out.println("Let's play!");
+        System.out.println(toString());
         while (!(endGame()) && movesMade != 9){
             System.out.println("Pick a row (1, 2, or 3)");
             int rowNum = -1;
